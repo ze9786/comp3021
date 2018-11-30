@@ -203,9 +203,12 @@ public class LevelEditorCanvas extends Canvas {
                          && Arrays.stream(map).flatMap(a->Arrays.stream(a)).anyMatch(e->e.toString().equals(Brush.DEST.toString())))||
                          Arrays.stream(map).flatMap(a->Arrays.stream(a)).filter(e->e.toString().equals(Brush.CRATE_ON_DEST.toString())).count()>=1){
                      if(Arrays.stream(map).flatMap(a->Arrays.stream(a)).filter(e->e.toString().equals(Brush.CRATE_ON_TILE.toString())).count()
-                        ==Arrays.stream(map).flatMap(a->Arrays.stream(a)).filter(e->e.toString().equals(Brush.DEST.toString())).count()){
+                        ==Arrays.stream(map).flatMap(a->Arrays.stream(a)).filter(e->e.toString().equals(Brush.DEST.toString())).count() ||
+                             Arrays.stream(map).flatMap(a->Arrays.stream(a)).filter(e->e.toString().equals(Brush.CRATE_ON_TILE.toString())).count()
+                                     ==Arrays.stream(map).flatMap(a->Arrays.stream(a)).filter(e->e.toString().equals(Brush.PLAYER_ON_DEST.toString())).count()){
                          if(Arrays.stream(map).flatMap(a->Arrays.stream(a)).filter(e->e.toString().equals(Brush.PLAYER_ON_TILE.toString())).count()
-                            ==1)
+                            ==1 || Arrays.stream(map).flatMap(a->Arrays.stream(a)).filter(e->e.toString().equals(Brush.PLAYER_ON_DEST.toString())).count()
+                                 ==1)
                              invalid=false;
                          else{
                              invalid=true;
