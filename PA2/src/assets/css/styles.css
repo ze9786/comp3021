@@ -34,7 +34,7 @@ VBox, HBox {
 }
 
 .bottom-menu {
-    -fx-padding: 15 15 15 15;
+    -fx-padding: 20 20 20 20;
     -fx-background-color: #ccc;
 }
 
